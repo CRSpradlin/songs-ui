@@ -8,6 +8,11 @@ import { NavComponent } from './components/nav/nav.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SongEntryComponent } from './components/song-entry/song-entry.component';
 import { SongListComponent } from './components/song-list/song-list.component';
+import { CounterComponent } from './components/counter/counter.component';
+
+import { StoreDevtoolsModule } from '@ngrx/store-devtools'
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './components/reducers';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,14 @@ import { SongListComponent } from './components/song-list/song-list.component';
     NavComponent,
     DashboardComponent,
     SongEntryComponent,
-    SongListComponent
+    SongListComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [],
   bootstrap: [AppComponent]
