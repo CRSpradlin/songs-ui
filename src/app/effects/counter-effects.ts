@@ -12,7 +12,7 @@ export class CounterEffects {
   // - if it is there (e.g. not null)
   // - dispatch an action of type actions.coutBySet
 
-  loudCountBy = createEffect(() => (
+  loadCountBy = createEffect(() => (
     this.actions$.pipe(
       ofType(appActions.applicationStarted),
       map(() => localStorage.getItem('by')),
