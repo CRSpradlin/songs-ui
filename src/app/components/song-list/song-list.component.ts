@@ -10,7 +10,7 @@ import { AppState, selectSongListModel } from '../reducers';
   styleUrls: ['./song-list.component.css']
 })
 export class SongListComponent implements OnInit {
-  
+
   // Originally had this for songs but now made it an observable below
   // songs: SongListModel[] = [
   //   { id: '1', title: 'Rocket Man', artist: 'Elton John', recommendedBy: 'Mark' },
