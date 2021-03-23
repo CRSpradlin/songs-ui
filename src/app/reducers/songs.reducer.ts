@@ -1,5 +1,6 @@
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, Action } from '@ngrx/store';
+import { createReducer, Action, on } from '@ngrx/store';
+import * as actions from '../actions/song.actions';
 
 export interface SongEntity {
   id: string;
@@ -25,7 +26,8 @@ const initialState: SongState = {
 }
 
 const reducerFunction = createReducer(
-  initialState
+  initialState,
+  on(actions.songAdded, (s, a) => adapter.addOne(a.payload, s))
 );
 
 export function reducer(state: SongState = initialState, action: Action): SongState {
