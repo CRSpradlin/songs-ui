@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { AppState, selectCounterCurrent } from 'src/app/reducers';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  current$: Observable<number>;
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    this.current$ = this.store.select(selectCounterCurrent);
   }
 
 }

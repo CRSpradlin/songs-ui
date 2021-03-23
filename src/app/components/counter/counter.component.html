@@ -5,5 +5,7 @@
         class="btn btn-primary">+</button>
 <div>
   <button (click)="reset()"
+          [disabled]="resetDisabled$ |async"
           class="btn btn-danger">Reset</button>
 </div>
+<app-counter-count-by></app-counter-count-by>
