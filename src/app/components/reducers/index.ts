@@ -24,3 +24,8 @@ export const selectCounterCurrent = createSelector(
   selectCounterBranch,
   b => b.current
 )
+
+export const selectResetDisabled = createSelector(
+  selectCounterCurrent,
+  c => c === 0
+)

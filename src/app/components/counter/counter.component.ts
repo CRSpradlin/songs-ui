@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState, selectCounterCurrent } from '../reducers';
+import { AppState, selectCounterCurrent, selectResetDisabled } from '../reducers';
 import * as actions from '../../actions/counter.actions';
 
 @Component({
@@ -14,11 +14,13 @@ export class CounterComponent implements OnInit {
   // dollar sign is a naming convention for observable variables
   // so you remember to pipe it with async in the html template
   current$: Observable<number>;
+  resetDisabled$: Observable<boolean>;
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.current$ = this.store.select(selectCounterCurrent);
+    this.resetDisabled$ = this.store.select(selectResetDisabled);
   }
 
   increment(){
@@ -31,6 +33,10 @@ export class CounterComponent implements OnInit {
 
   reset(){
     this.store.dispatch(actions.countReset());
+  }
+
+  set(setValue: number){
+    this.store.dispatch(actions.countSet({ setValue }))
   }
 
 }

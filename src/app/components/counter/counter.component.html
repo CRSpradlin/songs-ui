@@ -6,6 +6,13 @@
 </div>
 <br>
 <div>
-  <button class="btn btn-danger" (click)="reset()">Reset</button>
+  <!--Square brackets are for inputs parenthensees are outputs-->
+  <button class="btn btn-danger" [disabled]="resetDisabled$ | async" (click)="reset()">Reset</button>
+</div>
+<div>
+  <input value="0" required #setValue type="number" />
+  <button class="btn btn-primary" (click)="set(setValue.valueAsNumber)">Set</button>
 </div>
 <!--With Redux, and reducers/index.ts-->
+
+<app-counter-count-by></app-counter-count-by>

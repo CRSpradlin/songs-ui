@@ -13,6 +13,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './components/reducers';
+import { CounterCountByComponent } from './components/counter-count-by/counter-count-by.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { reducers } from './components/reducers';
     DashboardComponent,
     SongEntryComponent,
     SongListComponent,
-    CounterComponent
+    CounterComponent,
+    CounterCountByComponent
   ],
   imports: [
     BrowserModule,
