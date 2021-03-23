@@ -1,6 +1,6 @@
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, Action, on } from '@ngrx/store';
-import * as actions from '../../actions/song.actions';
+import * as actions from '../actions/song.actions';
 
 export interface SongEntity {
   id: string;

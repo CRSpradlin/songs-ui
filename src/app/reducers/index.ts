@@ -9,7 +9,7 @@
 import { createSelector } from '@ngrx/store';
 import * as fromCounter from './counter.reducer';
 import * as fromSongs from './songs.reducer';
-import { SongListModel } from '../../models/songs-modals';
+import { SongListModel } from '../models/songs-modals';
 
 export interface AppState {
   counter: fromCounter.CounterState,

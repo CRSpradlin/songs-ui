@@ -6,7 +6,7 @@
 
 import { Action, createReducer, on } from "@ngrx/store";
 import { selectResetDisabled } from ".";
-import * as actions from '../../actions/counter.actions';
+import * as actions from '../actions/counter.actions';
 
 export interface CounterState {
   current: number;

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { SongListModel } from 'src/app/models/songs-modals';
-import { AppState, selectSongListModel } from '../reducers';
+import { AppState, selectSongListModel } from '../../reducers';
 
 @Component({
   selector: 'app-song-list',

@@ -12,7 +12,7 @@ import { CounterComponent } from './components/counter/counter.component';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { StoreModule } from '@ngrx/store';
-import { reducers } from './components/reducers';
+import { reducers } from './reducers';
 import { CounterCountByComponent } from './components/counter-count-by/counter-count-by.component';
 
 import { EffectsModule } from '@ngrx/effects'

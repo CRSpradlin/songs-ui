@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { countBySet } from 'src/app/actions/counter.actions';
-import { AppState, selectCountingBy } from '../reducers';
+import { AppState, selectCountingBy } from '../../reducers';
 
 @Component({
   selector: 'app-counter-count-by',

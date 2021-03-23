@@ -1,5 +1,5 @@
 import { createAction } from "@ngrx/store";
-import { SongEntity } from "../components/reducers/songs.reducer";
+import { SongEntity } from "../reducers/songs.reducer";
 
 let id = 1;
 

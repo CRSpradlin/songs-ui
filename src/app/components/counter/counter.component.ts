@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState, selectCounterCurrent, selectResetDisabled } from '../reducers';
+import { AppState, selectCounterCurrent, selectResetDisabled } from '../../reducers';
 import * as actions from '../../actions/counter.actions';
 
 @Component({
