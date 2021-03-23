@@ -1,1 +1,31 @@
-<p>song-entry works!</p>
+<form [formGroup]="formGroup"
+      (ngSubmit)="submit(focusMe)">
+  <div class="form-group">
+    <label for="Title">Title</label>
+    <input type="text"
+           #focusMe
+           class="form-control"
+           name="Title"
+           formControlName="title">
+    <div class="alert alert-danger"
+         *ngIf="title.errors && (title.touched || title.dirty)">
+      <p>This is Required</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="Artist">Artist</label>
+    <input type="text"
+           class="form-control"
+           name="Artist"
+           formControlName="artist">
+  </div>
+  <div class="form-group">
+    <label for="RecommendedBy">Recommended By</label>
+    <input type="text"
+           class="form-control"
+           name="RecommendedBy"
+           formControlName="recommendedBy">
+  </div>
+  <button type="submit"
+          class="btn btn-success">Add Song</button>
+</form>
