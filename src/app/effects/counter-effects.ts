@@ -6,6 +6,12 @@ import * as actions from '../actions/counter.actions'
 @Injectable()
 export class CounterEffects {
 
+  // when an action of "some type" happens:
+  // - check localStorage for 'by'
+  // - if it is there (e.g. not null)
+  // - dispatch an action of type actions.coutBySet
+  
+
   saveCountBy$ = createEffect(() =>
     this.actions$.pipe(
       ofType(actions.countBySet),
