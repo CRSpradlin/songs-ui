@@ -20,6 +20,10 @@ import { CounterEffects } from './effects/counter-effects';
 
 import { ReactiveFormsModule } from "@angular/forms";
 
+import { TasksComponent } from './components/tasks/tasks.component';
+import { TasksListComponent } from './components/tasks-list/tasks-list.component';
+import { TaskEntryComponent } from './components/task-entry/task-entry.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,10 @@ import { ReactiveFormsModule } from "@angular/forms";
     SongEntryComponent,
     SongListComponent,
     CounterComponent,
-    CounterCountByComponent
+    CounterCountByComponent,
+    TasksComponent,
+    TasksListComponent,
+    TaskEntryComponent
   ],
   imports: [
     BrowserModule,

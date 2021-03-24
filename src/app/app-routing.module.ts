@@ -4,6 +4,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SongEntryComponent } from './components/song-entry/song-entry.component';
 import { SongListComponent } from './components/song-list/song-list.component';
+import { TasksComponent } from './components/tasks/tasks.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'counter',
     component: CounterComponent
+  },
+  {
+    path: 'tasks',
+    component: TasksComponent
   },
   {
     path: '**',
