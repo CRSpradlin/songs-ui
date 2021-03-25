@@ -21,6 +21,7 @@ import { CounterEffects } from './effects/counter-effects';
 import { ReactiveFormsModule } from "@angular/forms";
 
 import { HttpClientModule } from "@angular/common/http"
+import { SongsEffects } from './effects/songs-effects';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { HttpClientModule } from "@angular/common/http"
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
-    EffectsModule.forRoot([CounterEffects]),
+    EffectsModule.forRoot([CounterEffects, SongsEffects]),
     ReactiveFormsModule,
     HttpClientModule
   ],

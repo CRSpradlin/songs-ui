@@ -1,4 +1,4 @@
-import { createAction } from "@ngrx/store";
+import { createAction, props } from "@ngrx/store";
 import { SongEntity } from "../reducers/songs.reducer";
 
 let id = 1;
@@ -12,5 +12,19 @@ export const songAdded = createAction(
       recommendedBy,
       id: 'Temp' + id++
     } as SongEntity
-})
+  })
+);
+
+export const loadSongData = createAction(
+  '[app songs] load the song data'
+);
+
+export const loadSongsDataSucceeded = createAction(
+  '[app songs] loading the songs succeeded',
+  props<{ payload: SongEntity[] }>()
+);
+
+export const loadsongsFailed = createAction(
+  '[app songs] loading the songs failed',
+  props<{ errorMessage: string }>()
 );
