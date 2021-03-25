@@ -20,6 +20,8 @@ import { CounterEffects } from './effects/counter-effects';
 
 import { ReactiveFormsModule } from "@angular/forms";
 
+import { HttpClientModule } from "@angular/common/http"
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CounterEffects]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
