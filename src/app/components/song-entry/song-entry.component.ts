@@ -30,16 +30,14 @@ export class SongEntryComponent implements OnInit {
     return this.formGroup.get('recommendedBy');
   }
 
-  submit(firstElement: HTMLElement): void{
-    if (this.formGroup.valid){
+  submit(focusThis: HTMLElement): void {
+    if (this.formGroup.valid) {
       this.store.dispatch(songAdded(this.formGroup.value));
-      console.log(this.formGroup.value);
       this.formGroup.reset();
-      firstElement.focus();
+      focusThis.focus();
     } else {
-      console.log('This is bad');
+      console.log("Something bad on the form");
     }
-
   }
 
 }

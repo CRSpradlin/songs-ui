@@ -15,6 +15,8 @@ export const songAdded = createAction(
   })
 );
 
+
+//Initiator
 export const loadSongData = createAction(
   '[app songs] load the song data'
 );
@@ -23,6 +25,16 @@ export const loadSongsDataSucceeded = createAction(
   '[app songs] loading the songs succeeded',
   props<{ payload: SongEntity[] }>()
 );
+
+export const songAddedSuccessfully = createAction(
+  '[app songs] song added successfully',
+  props<{ payload: SongEntity, oldId: string }>()
+);
+
+export const songAddedFailure = createAction(
+  '[app songs] song added failure',
+  props<{payload: SongEntity, message: string}>()
+)
 
 export const loadsongsFailed = createAction(
   '[app songs] loading the songs failed',
