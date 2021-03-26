@@ -12,6 +12,14 @@ import { of } from "rxjs";
 @Injectable()
 export class SongsEffects {
 
+  removeSong$ = createEffect(() =>
+    this.actions$.pipe(
+
+    ), { dispatch: false }
+
+
+  )
+
   // songAdded -> (a trip to api ) => (songAddedSuccessfully | songAddedFailure)
   addSong$ = createEffect(() =>
     this.actions$.pipe(
