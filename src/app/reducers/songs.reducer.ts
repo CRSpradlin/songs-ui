@@ -36,7 +36,8 @@ const reducerFunction = createReducer(
     changes: {
       id: a.payload.id
     }
-  }, s))
+  }, s)),
+  on(actions.songRemoved, (s, a) => adapter.removeOne(a.payload.id, s))
 );
 
 export function reducer(state: SongState = initialState, action: Action): SongState {

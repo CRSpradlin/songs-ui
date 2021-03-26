@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { songRemoved } from 'src/app/actions/song.actions';
 import { SongListModel } from 'src/app/models/songs-models';
 import { AppState, selectSongListModel, selectSongsLoaded } from 'src/app/reducers';
 import { SongEntity } from 'src/app/reducers/songs.reducer';
@@ -23,6 +24,6 @@ export class SongListComponent implements OnInit {
   }
 
   removeSong(song: SongEntity): void {
-    console.log('Removing song with the id of ' + song.id);
+    this.store.dispatch(songRemoved({ payload: song }))
   }
 }

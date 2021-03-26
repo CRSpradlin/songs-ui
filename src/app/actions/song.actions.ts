@@ -43,3 +43,14 @@ export const loadSongsFailed = createAction(
   '[app songs] loading the songs failed',
   props<{ errorMessage: string }>()
 );
+
+
+export const songRemoved = createAction(
+  '[app songs] song removed',
+  props<{ payload: SongEntity }>()
+);
+
+export const songRemovedFailure = createAction(
+  '[app songs] song removed failure',
+  props<{ payload: SongEntity, message: string }>()
+);
