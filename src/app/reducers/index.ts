@@ -31,7 +31,12 @@ export const selectSongsLoaded = createSelector(
 
 export const selectSongListModel = createSelector(
   selectSongEntityArray,
-  songs => songs as SongListModel[]
+  songs => songs.map(song => {
+    return {
+      ...song,
+      isSaved: !song.id.toString().startsWith('T')
+    } as SongListModel;
+  })
 )
 
 

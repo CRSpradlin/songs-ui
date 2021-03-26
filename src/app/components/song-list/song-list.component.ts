@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { SongListModel } from 'src/app/models/songs-models';
 import { AppState, selectSongListModel, selectSongsLoaded } from 'src/app/reducers';
+import { SongEntity } from 'src/app/reducers/songs.reducer';
 
 @Component({
   selector: 'app-song-list',
@@ -21,4 +22,7 @@ export class SongListComponent implements OnInit {
     this.songsLoaded$ = this.store.select(selectSongsLoaded);
   }
 
+  removeSong(song: SongEntity): void {
+    console.log('Removing song with the id of ' + song.id);
+  }
 }

@@ -3,4 +3,5 @@ export interface SongListModel {
   title: string;
   artist?: string;
   recommendedBy: string;
+  isSaved: boolean;
 }

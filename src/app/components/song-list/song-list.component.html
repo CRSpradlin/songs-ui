@@ -5,6 +5,7 @@
 </div>
 
 <div *ngIf="songsLoaded$ | async">
+  <app-song-entry></app-song-entry>
   <div class="alert alert-info"
        *ngIf="(songs$ | async)?.length === 0">
     <h2>You Have No Songs! Add Some!</h2>
@@ -16,6 +17,12 @@
       <h6 class="card-subtitle mb-2 text-muted">By {{ song.artist || 'Unknown Artist'}}</h6>
       <p class="card-text">{{ song.recommendedBy }} Recommended this</p>
 
+      <div>
+        <button (click)="removeSong(song)"
+                *ngIf="song.isSaved"
+                class="btn btn-danger">Remove Song</button>
+      </div>
+      <p *ngIf="!song.isSaved"><em>Please waiting...saving your song.</em></p>
     </div>
   </div>
 </div>
