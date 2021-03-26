@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { SongListModel } from 'src/app/models/songs-modals';
-import { AppState, selectSongListModel } from '../../reducers';
+import { AppState, selectSongListModel, selectSongsLoaded } from '../../reducers';
 
 @Component({
   selector: 'app-song-list',
@@ -18,11 +18,13 @@ export class SongListComponent implements OnInit {
   // ]
 
   songs$: Observable<SongListModel[]>
+  songsLoaded$: Observable<boolean>
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.songs$ = this.store.select(selectSongListModel);
+    this.songsLoaded$ = this.store.select(selectSongsLoaded);
   }
 
 }
